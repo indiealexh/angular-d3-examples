@@ -1,0 +1,28 @@
+:host {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  border: 1px solid #ddd;
+  margin-top: -24px;
+  border-top: 0;
+
+  .svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    cursor: grab;
+  }
+
+  .subject rect {
+    fill: #fff;
+    stroke: #268695;
+    stroke-width: 3px;
+  }
+}
+
+

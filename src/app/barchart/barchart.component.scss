@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  height: auto;
+  width: auto;
+}
+:host ::ng-deep rect {
+  fill: steelblue;
+  fill-opacity: 0.8;
+}
+:host ::ng-deep rect:hover {
+  fill-opacity: 1;
+}
+:host ::ng-deep .x-axis .y-axis {
+  font-size: smaller;
+}

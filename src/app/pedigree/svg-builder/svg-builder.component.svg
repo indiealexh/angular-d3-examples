@@ -1,0 +1,31 @@
+<svg
+     #pedigreesvg
+     [attr.viewBox]="[-margin.left, left?.x ?? 0 - margin.top, width, height]">
+  <g id="SVGcontainer" cursor="grab" class="svg-content-responsive" [attr.transform]="zoomTransform">
+    <g fill="none" stroke="#555" stroke-opacity="0.4" stroke-width="1.5">
+      <g *ngFor="let link of links">
+        <path [attr.d]="buildLinkPath(link)"></path>
+      </g>
+    </g>
+    <g id="node-container" cursor="pointer" pointer-events="all">
+      <g class="node subject"
+         *ngFor="let subject of data"
+         [attr.transform]="'translate('+subject.y+','+subject.x+')'">
+        <rect [attr.width]="memberBox.width"
+              [attr.height]="memberBox.height"
+              [attr.x]="-(memberBox.width/2)"
+              [attr.y]="-(memberBox.height/2)"
+              [attr.fill]="'red'"></rect>
+        <title>{{subject.data.name}}</title>
+        <text
+          [attr.dx]="-(memberBox.width/2) + 10"
+          [attr.dy]="(-memberBox.height/2) + 35"
+          text-anchor="start"
+        > {{subject.data.name}}</text>
+      </g>
+    </g>
+
+
+  </g>
+</svg>
+
